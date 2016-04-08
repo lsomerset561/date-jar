@@ -5,7 +5,7 @@ function getIdeaInfo() {
 	define("HOSTNAME", "localhost");
 	define("MYSQLDB", "capstone");
 	
-	$idea = $_POST['idea'];
+	$idea = trim( filter_input(INPUT_POST, 'idea', FILTER_SANITIZE_STRING) );
 	$dwelling = $_POST['dwelling'];
 	$region = $_POST['region'];
 	$price = $_POST['price'];

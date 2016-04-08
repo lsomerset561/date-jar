@@ -5,11 +5,11 @@ function getIdeaInfo() {
 	define("HOSTNAME", "localhost");
 	define("MYSQLDB", "capstone");
 	
-	$idea1 = $_POST['idea1'];
+	$idea1 = trim( filter_input(INPUT_POST, 'idea1', FILTER_SANITIZE_STRING) );
 	$dwelling1 = $_POST['dwelling1'];
 	$region1 = $_POST['region1'];
 	$price1 = $_POST['price1'];
-	$idea2 = $_POST['idea2'];
+	$idea2 = trim( filter_input(INPUT_POST, 'idea2', FILTER_SANITIZE_STRING) );
 	$dwelling2 = $_POST['dwelling2'];
 	$region2 = $_POST['region2'];
 	$price2 = $_POST['price2'];
