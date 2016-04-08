@@ -1,8 +1,38 @@
 <?php
+function getIdeaInfo() {
+	define("MYSQLUSER", "root");
+	define("MYSQLPASS", "");
+	define("HOSTNAME", "localhost");
+	define("MYSQLDB", "capstone");
+	
+	$idea = $_POST['idea'];
+	$dwelling = $_POST['dwelling'];
+	$region = $_POST['region'];
+	$price = $_POST['price'];
+	
+	$connection = @new mysqli(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
+	if ($connection->connect_error) {
+		die('Connect Error: ' . $connection->connect_error);
+	} else {
+		echo 'Successful connection to MySQL <hr />';
+	}
+	
+	$query = "INSERT INTO jar (idea, dwelling, region, price) VALUES ";
+	$query .= "('$idea', '$dwelling', '$region', '$price');";
+	
+	if (!$result = $connection->query($query)) {
+		echo "Unable to add entry<br />";
+	} else {
+		echo "New entry successfully added<br />";
+	}
+}
+
 if (isset ($_POST['done'])) {
+	getIdeaInfo();
 	header("location:display.php");
 	exit;
 } elseif (isset ($_POST['addIdea'])) {
+	getIdeaInfo();
 	header("location:continue.php");
 	exit;
 }

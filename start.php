@@ -34,12 +34,12 @@ function getIdeaInfo() {
 
 if (isset ($_POST['done'])) {
 	getIdeaInfo();
-	//header("location:display.php");
-	//exit;
+	header("location:display.php");
+	exit;
 } elseif (isset ($_POST['addIdea'])) {
 	getIdeaInfo();
-	//header("location:continue.php");
-	//exit;
+	header("location:continue.php");
+	exit;
 }
 ?>
 
