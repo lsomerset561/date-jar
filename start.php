@@ -1,10 +1,45 @@
 <?php
+function getIdeaInfo() {
+	define("MYSQLUSER", "root");
+	define("MYSQLPASS", "");
+	define("HOSTNAME", "localhost");
+	define("MYSQLDB", "capstone");
+	
+	$idea1 = $_POST['idea1'];
+	$dwelling1 = $_POST['dwelling1'];
+	$region1 = $_POST['region1'];
+	$price1 = $_POST['price1'];
+	$idea2 = $_POST['idea2'];
+	$dwelling2 = $_POST['dwelling2'];
+	$region2 = $_POST['region2'];
+	$price2 = $_POST['price2'];
+	
+	$connection = @new mysqli(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
+	if ($connection->connect_error) {
+		die('Connect Error: ' . $connection->connect_error);
+	} else {
+		echo 'Successful connection to MySQL <hr />';
+	}
+	
+	$query = "INSERT INTO jar (idea, dwelling, region, price) VALUES ";
+	$query .= "('$idea1', '$dwelling1', '$region1', '$price1'), ";
+	$query .= "('$idea2', '$dwelling2', '$region2', '$price2');";
+	
+	if (!$result = $connection->query($query)) {
+		echo "Unable to add entry<br />";
+	} else {
+		echo "New entry successfully added<br />";
+	}
+}
+
 if (isset ($_POST['done'])) {
-	header("location:display.php");
-	exit;
+	getIdeaInfo();
+	//header("location:display.php");
+	//exit;
 } elseif (isset ($_POST['addIdea'])) {
-	header("location:continue.php");
-	exit;
+	getIdeaInfo();
+	//header("location:continue.php");
+	//exit;
 }
 ?>
 
@@ -60,10 +95,10 @@ if (isset ($_POST['done'])) {
 				<div class="form-group">
 					<h4 class="col-xs-1 col-xs-offset-3">1.</h4>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="dwelling" value="indoors">indoors
+						<input type="radio" name="dwelling1" value="indoors">indoors
 					</label>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="dwelling" value="outdoors">outdoors
+						<input type="radio" name="dwelling1" value="outdoors">outdoors
 					</label>
 				</div>
 			</div> <!-- details: in/outdoors -->
@@ -71,10 +106,10 @@ if (isset ($_POST['done'])) {
 				<div class="form-group">
 					<h4 class="col-xs-1 col-xs-offset-3">2.</h4>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="region" value="in_town">in town
+						<input type="radio" name="region1" value="in_town">in town
 					</label>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="region" value="out_of_town">out of town
+						<input type="radio" name="region1" value="out_of_town">out of town
 					</label>
 				</div>
 			</div> <!-- details: in/out of town -->
@@ -82,13 +117,13 @@ if (isset ($_POST['done'])) {
 				<div class="form-group">
 					<h4 class="col-xs-1 col-xs-offset-3">3.</h4>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="price" value="$">less than &#36;20
+						<input type="radio" name="price1" value="$">less than &#36;20
 					</label>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="price" value="$$">&#36;20 - &#36;50
+						<input type="radio" name="price1" value="$$">&#36;20 - &#36;50
 					</label>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="price" value="$$$">greater than &#36;50
+						<input type="radio" name="price1" value="$$$">greater than &#36;50
 					</label>
 				</div>
 			</div> <!-- details: price -->
@@ -113,10 +148,10 @@ if (isset ($_POST['done'])) {
 				<div class="form-group">
 					<h4 class="col-xs-1 col-xs-offset-3">1.</h4>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="dwelling" value="indoors">indoors
+						<input type="radio" name="dwelling2" value="indoors">indoors
 					</label>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="dwelling" value="outdoors">outdoors
+						<input type="radio" name="dwelling2" value="outdoors">outdoors
 					</label>
 				</div>
 			</div> <!-- details: in/outdoors -->
@@ -124,10 +159,10 @@ if (isset ($_POST['done'])) {
 				<div class="form-group">
 					<h4 class="col-xs-1 col-xs-offset-3">2.</h4>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="region" value="in_town">in town
+						<input type="radio" name="region2" value="in_town">in town
 					</label>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="region" value="out_of_town">out of town
+						<input type="radio" name="region2" value="out_of_town">out of town
 					</label>
 				</div>
 			</div> <!-- details: in/out of town -->
@@ -135,13 +170,13 @@ if (isset ($_POST['done'])) {
 				<div class="form-group">
 					<h4 class="col-xs-1 col-xs-offset-3">3.</h4>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="price" value="$">less than &#36;20
+						<input type="radio" name="price2" value="$">less than &#36;20
 					</label>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="price" value="$$">&#36;20 - &#36;50
+						<input type="radio" name="price2" value="$$">&#36;20 - &#36;50
 					</label>
 					<label class="col-xs-2 radio-inline">
-						<input type="radio" name="price" value="$$$">greater than &#36;50
+						<input type="radio" name="price2" value="$$$">greater than &#36;50
 					</label>
 				</div>
 			</div> <!-- details: price -->
