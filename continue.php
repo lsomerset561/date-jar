@@ -1,3 +1,13 @@
+<?php
+if (isset ($_POST['done'])) {
+	header("location:display.php");
+	exit;
+} elseif (isset ($_POST['addIdea'])) {
+	header("location:continue.php");
+	exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +38,7 @@
 				<img src="http://placehold.it/400x350" class="img-responsive center-block" alt="jar">
 			</div>
 		</div> <!-- img -->
-		<form>
+		<form action="" method="post">
 			<div class="row">
 				<h4 class="text-center">Enter another date idea:</h4>
 			</div> <!-- enter idea header -->

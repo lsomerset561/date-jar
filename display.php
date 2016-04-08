@@ -1,3 +1,13 @@
+<?php
+if (isset ($_POST['pickAgain'])) {
+	header("location:display.php");
+	exit;
+} elseif (isset ($_POST['startOver'])) {
+	header("location:index.php");
+	exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,20 +38,26 @@
 				<img src="http://placehold.it/400x350" class="img-responsive center-block" alt="jar">
 			</div>
 		</div> <!-- img -->
-		<div class="row spacer">
-			<div class="col-xs-12">
-				<h4 class="text-center">Enter at least two date ideas &amp; I'll randomly choose one for you!</h4>
-				<a href="start.html">
-					<button class="btn btn-default btn-lg center-block" type="submit" name="start" value="start">
-						Start
-					</button>
-				</a>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="text-center">Your chosen date idea is...</h4>
 			</div>
-		</div> <!-- description & start btn -->
-
-		<div>
-			
-		</div>
+			<div class="panel-body">
+				
+			</div>
+		</div> <!-- display the random choice -->
+		
+		<div class="row spacer">
+			<form action="" method="post">
+				<button class="col-xs-2 col-xs-offset-2 btn btn-default btn-lg" type="submit" name="pickAgain">
+					Pick Again
+				</button>
+				<button class="col-xs-2 col-xs-offset-4 btn btn-default btn-lg" type="submit" name="startOver">
+					Start Over
+				</button>
+			</form>
+		</div> <!-- try again/start over btn -->
 	</div>
 </body>
 </html>
