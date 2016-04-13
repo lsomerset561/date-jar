@@ -33,7 +33,7 @@ if (isset ($_POST['done'])) {
 	exit;
 }
 
-include("header.php");
+include("inc/header.php");
 ?>
 
 	&nbsp;
@@ -157,4 +157,4 @@ include("header.php");
 	</form>
 </div>
 
-<?php include("footer.php"); ?>
+<?php include("inc/footer.php"); ?>

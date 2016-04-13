@@ -25,7 +25,7 @@ if (isset ($_POST['pickAgain'])) {
 	exit;
 }
 
-include("header.php");
+include("inc/header.php");
 ?>
 
 	<h1>&nbsp;</h1>
@@ -55,4 +55,4 @@ include("header.php");
 	</div> <!-- try again/start over btn -->
 </div>
 
-<?php include("footer.php"); ?>
+<?php include("inc/footer.php"); ?>

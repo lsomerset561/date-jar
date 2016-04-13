@@ -28,10 +28,9 @@ if (isset ($_POST['done'])) {
 	exit;
 }
 
-include("header.php");
+include("inc/header.php");
 ?>
 
-<div class="hidden-xs hidden-sm col-md-6 spacer">
 	&nbsp;
 </div>
 <div class="col-xs-12 col-md-6">
@@ -99,4 +98,4 @@ include("header.php");
 	</form>
 </div>
 
-<?php include("footer.php"); ?>
+<?php include("inc/footer.php"); ?>

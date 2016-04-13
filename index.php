@@ -1,4 +1,4 @@
-<?php include("header.php"); ?>
+<?php include("inc/header.php"); ?>
 	
 	<h1>&nbsp;</h1>
 </div> <!-- end empty col for vertical spacing -->
@@ -12,4 +12,4 @@
 	</a>
 </div> <!-- description & start btn -->
 
-<?php include("footer.php"); ?>
+<?php include("inc/footer.php"); ?>
