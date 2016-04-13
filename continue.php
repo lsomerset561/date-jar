@@ -1,5 +1,4 @@
 <?php
-include("inc/header.php");
 include("inc/functions.php");
 
 if (isset ($_POST['done'])) {
@@ -19,6 +18,8 @@ if (isset ($_POST['done'])) {
 		exit;
 	}
 }
+
+include("inc/header.php");
 ?>
 
 	&nbsp;

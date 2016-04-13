@@ -1,24 +1,13 @@
 <?php
-define("MYSQLUSER", "root");
-define("MYSQLPASS", "");
-define("HOSTNAME", "localhost");
-define("MYSQLDB", "capstone");
+include("inc/functions.php");
 
-$link = mysqli_connect(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
-$query1 = "SELECT COUNT(idea) FROM jar;";
-$result_obj = mysqli_query($link, $query1);
-$result = mysqli_fetch_row($result_obj);
-$numOfIdeas = $result[0];
-
-$query2 = "SELECT * FROM jar WHERE idea_id = " . rand(1, $numOfIdeas) . ";";
-$result_obj = mysqli_query($link, $query2);
-$result = mysqli_fetch_array($result_obj, MYSQLI_ASSOC);
-$randomIdea = $result['idea'];
+$randomIdea = getRandomIdea();
 
 if (isset ($_POST['pickAgain'])) {
 	header("location:display.php");
 	exit;
 } elseif (isset ($_POST['startOver'])) {
+	$link = mysqli_connect(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
 	$query3 = "TRUNCATE jar;";
 	$result_obj = mysqli_query($link, $query3);
 	header("location:index.php");
