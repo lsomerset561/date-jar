@@ -19,12 +19,8 @@
 <body>
 	<div class="container-fluid">
 		<div class="row spacer">
-			<div class="col-xs-12 col-sm-2 col-sm-offset-10"> <!-- sm to help gauge xs width -->
+			<div class="col-xs-12 col-md-5 spacer">
 				<h1 class="text-uppercase text-center">Date Jar</h1>
-			</div>
-		</div> <!-- page title -->
-		<div class="row spacer">
-			<div class="col-xs-12">
-				<img src="img/png-green-marbles-jar.png" class="img-responsive center-block" alt="jar">
-			</div>
-		</div> <!-- img -->
+				<img src="img/png-green-marbles-jar.png" class="img-responsive center-block" alt="translucent brown jar two-thirds full of green marbles">
+			</div> <!-- page title & img --> 
+			<div class="hidden-xs hidden-sm col-md-6 spacer"> <!-- start empty col for vertical spacing -->
