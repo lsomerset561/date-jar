@@ -12,8 +12,8 @@ function isContinueFormEmpty() {
 }
 
 function getContinueFormInfo() {
-	define("MYSQLUSER", "root");
-	define("MYSQLPASS", "");
+	define("MYSQLUSER", "lsomerse_resume");
+	define("MYSQLPASS", "test1234?!");
 	define("HOSTNAME", "localhost");
 	define("MYSQLDB", "capstone");
 	
@@ -40,8 +40,8 @@ function isStartFormEmpty() {
 }
 
 function getStartFormInfo() {
-	define("MYSQLUSER", "root");
-	define("MYSQLPASS", "");
+	define("MYSQLUSER", "lsomerse_resume");
+	define("MYSQLPASS", "test1234?!");
 	define("HOSTNAME", "localhost");
 	define("MYSQLDB", "capstone");
 	
