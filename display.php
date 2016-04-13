@@ -61,7 +61,7 @@ if (isset ($_POST['pickAgain'])) {
 			</div>
 			<div class="panel-body">
 				<h4 class="text-center">
-					<?php echo $randomIdea; ?>
+					<?php echo htmlspecialchars($randomIdea); ?>
 				</h4>
 			</div>
 		</div> <!-- display the random choice -->
