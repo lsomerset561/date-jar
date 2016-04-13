@@ -1,6 +1,6 @@
 <?php include("inc/header.php"); ?>
 	
-	<h1>&nbsp;</h1>
+	<h1 class="hidden-xs hidden-sm">&nbsp;</h1>
 </div> <!-- end empty col for vertical spacing -->
 
 <div class="col-xs-12 col-md-7 spacer">
