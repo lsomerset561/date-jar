@@ -14,22 +14,13 @@ function getIdeaInfo() {
 	$region2 = $_POST['region2'];
 	$price2 = $_POST['price2'];
 	
-	$connection = @new mysqli(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
-	if ($connection->connect_error) {
-		die('Connect Error: ' . $connection->connect_error);
-	} else {
-		echo 'Successful connection to MySQL <hr />';
-	}
+	$link = mysqli_connect(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
 	
 	$query = "INSERT INTO jar (idea, dwelling, region, price) VALUES ";
 	$query .= "('$idea1', '$dwelling1', '$region1', '$price1'), ";
 	$query .= "('$idea2', '$dwelling2', '$region2', '$price2');";
 	
-	if (!$result = $connection->query($query)) {
-		echo "Unable to add entry<br />";
-	} else {
-		echo "New entry successfully added<br />";
-	}
+	mysqli_query($link, $query);
 }
 
 if (isset ($_POST['done'])) {
