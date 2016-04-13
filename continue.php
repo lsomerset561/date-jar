@@ -1,4 +1,6 @@
 <?php
+include("inc/header.php");
+
 function getIdeaInfo() {
 	define("MYSQLUSER", "root");
 	define("MYSQLPASS", "");
@@ -19,16 +21,22 @@ function getIdeaInfo() {
 }
 
 if (isset ($_POST['done'])) {
-	getIdeaInfo();
-	header("location:display.php");
-	exit;
+	if (empty($_POST['idea']) || empty($_POST['dwelling']) || empty($_POST['region']) || empty($_POST['price']) ) {
+		echo "<p class='error-message text-center'>Please complete all of the fields below.</p>";
+	} else {
+		getIdeaInfo();
+		header("location:display.php");
+		exit;
+	}
 } elseif (isset ($_POST['addIdea'])) {
-	getIdeaInfo();
-	header("location:continue.php");
-	exit;
+	if (empty($_POST['idea']) || empty($_POST['dwelling']) || empty($_POST['region']) || empty($_POST['price']) ) {
+		echo "<p class='error-message text-center'>Please complete all of the fields below.</p>";
+	} else {
+		getIdeaInfo();
+		header("location:continue.php");
+		exit;
+	}
 }
-
-include("inc/header.php");
 ?>
 
 	&nbsp;

@@ -6,3 +6,9 @@ img {
 	width: 250px;
 	height: 300px;
 }
+
+.error-message {
+	background: #ffeca4;
+    border: 2px solid #f16702;
+	width: auto;
+}

@@ -1,4 +1,6 @@
 <?php
+include("inc/header.php");
+
 function getIdeaInfo() {
 	define("MYSQLUSER", "root");
 	define("MYSQLPASS", "");
@@ -24,16 +26,24 @@ function getIdeaInfo() {
 }
 
 if (isset ($_POST['done'])) {
-	getIdeaInfo();
-	header("location:display.php");
-	exit;
+	if (empty($_POST['idea1']) || empty($_POST['dwelling1']) || empty($_POST['region1']) || empty($_POST['price1']) || empty($_POST['idea2']) || empty($_POST['dwelling2']) || empty($_POST['region2']) || empty($_POST['price2']) ) {
+		
+		echo "<p class='error-message text-center'>Please complete all of the fields below.</p>";
+	} else {
+		getIdeaInfo();
+		header("location:display.php");
+		exit;
+	}
 } elseif (isset ($_POST['addIdea'])) {
-	getIdeaInfo();
-	header("location:continue.php");
-	exit;
+	if (empty($_POST['idea1']) || empty($_POST['dwelling1']) || empty($_POST['region1']) || empty($_POST['price1']) || empty($_POST['idea2']) || empty($_POST['dwelling2']) || empty($_POST['region2']) || empty($_POST['price2']) ) {
+		
+		echo "<p class='error-message text-center'>Please complete all of the fields below.</p>";
+	} else {
+		getIdeaInfo();
+		header("location:continue.php");
+		exit;
+	}
 }
-
-include("inc/header.php");
 ?>
 
 	&nbsp;

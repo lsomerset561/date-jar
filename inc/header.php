@@ -23,4 +23,4 @@
 				<h1 class="text-uppercase text-center">Date Jar</h1>
 				<img src="./img/png-green-marbles-jar.png" class="img-responsive center-block" alt="translucent brown jar two-thirds full of green marbles">
 			</div> <!-- page title & img --> 
-			<div class="hidden-xs hidden-sm col-md-6 spacer"> <!-- start empty col for vertical spacing -->
+			<div class="col-xs-12 col-md-6 spacer"> <!-- start empty col for vertical spacing -->
