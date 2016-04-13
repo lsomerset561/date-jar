@@ -1,4 +1,17 @@
 <?php
+define("MYSQLUSER", "root");
+define("MYSQLPASS", "");
+define("HOSTNAME", "localhost");
+define("MYSQLDB", "capstone");
+
+$link = mysqli_connect(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
+
+$query = "SELECT COUNT(idea) FROM jar;";
+
+$result = mysqli_query($link, $query);
+$numOfIdeas = mysqli_fetch_row($result);
+echo $numOfIdeas[0];
+
 if (isset ($_POST['pickAgain'])) {
 	header("location:display.php");
 	exit;
