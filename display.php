@@ -19,6 +19,8 @@ if (isset ($_POST['pickAgain'])) {
 	header("location:display.php");
 	exit;
 } elseif (isset ($_POST['startOver'])) {
+	$query3 = "TRUNCATE jar;";
+	$result_obj = mysqli_query($link, $query3);
 	header("location:index.php");
 	exit;
 }
