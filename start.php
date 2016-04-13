@@ -1,45 +1,20 @@
 <?php
 include("inc/header.php");
-
-function getIdeaInfo() {
-	define("MYSQLUSER", "root");
-	define("MYSQLPASS", "");
-	define("HOSTNAME", "localhost");
-	define("MYSQLDB", "capstone");
-	
-	$idea1 = trim( filter_input(INPUT_POST, 'idea1', FILTER_SANITIZE_STRING) );
-	$dwelling1 = $_POST['dwelling1'];
-	$region1 = $_POST['region1'];
-	$price1 = $_POST['price1'];
-	$idea2 = trim( filter_input(INPUT_POST, 'idea2', FILTER_SANITIZE_STRING) );
-	$dwelling2 = $_POST['dwelling2'];
-	$region2 = $_POST['region2'];
-	$price2 = $_POST['price2'];
-	
-	$link = mysqli_connect(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
-	
-	$query = "INSERT INTO jar (idea, dwelling, region, price) VALUES ";
-	$query .= "('$idea1', '$dwelling1', '$region1', '$price1'), ";
-	$query .= "('$idea2', '$dwelling2', '$region2', '$price2');";
-	
-	mysqli_query($link, $query);
-}
+include("inc/functions.php");
 
 if (isset ($_POST['done'])) {
-	if (empty($_POST['idea1']) || empty($_POST['dwelling1']) || empty($_POST['region1']) || empty($_POST['price1']) || empty($_POST['idea2']) || empty($_POST['dwelling2']) || empty($_POST['region2']) || empty($_POST['price2']) ) {
-		
-		echo "<p class='error-message text-center'>Please complete all of the fields below.</p>";
+	if ( isStartFormEmpty() ) {
+		getErrorMessage();
 	} else {
-		getIdeaInfo();
+		getStartFormInfo();
 		header("location:display.php");
 		exit;
 	}
 } elseif (isset ($_POST['addIdea'])) {
-	if (empty($_POST['idea1']) || empty($_POST['dwelling1']) || empty($_POST['region1']) || empty($_POST['price1']) || empty($_POST['idea2']) || empty($_POST['dwelling2']) || empty($_POST['region2']) || empty($_POST['price2']) ) {
-		
-		echo "<p class='error-message text-center'>Please complete all of the fields below.</p>";
+	if ( isStartFormEmpty() ) {
+		getErrorMessage();
 	} else {
-		getIdeaInfo();
+		getStartFormInfo();
 		header("location:continue.php");
 		exit;
 	}

@@ -1,38 +1,20 @@
 <?php
 include("inc/header.php");
-
-function getIdeaInfo() {
-	define("MYSQLUSER", "root");
-	define("MYSQLPASS", "");
-	define("HOSTNAME", "localhost");
-	define("MYSQLDB", "capstone");
-	
-	$idea = trim( filter_input(INPUT_POST, 'idea', FILTER_SANITIZE_STRING) );
-	$dwelling = $_POST['dwelling'];
-	$region = $_POST['region'];
-	$price = $_POST['price'];
-	
-	$link = mysqli_connect(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
-	
-	$query = "INSERT INTO jar (idea, dwelling, region, price) VALUES ";
-	$query .= "('$idea', '$dwelling', '$region', '$price');";
-	
-	mysqli_query($link, $query);
-}
+include("inc/functions.php");
 
 if (isset ($_POST['done'])) {
-	if (empty($_POST['idea']) || empty($_POST['dwelling']) || empty($_POST['region']) || empty($_POST['price']) ) {
-		echo "<p class='error-message text-center'>Please complete all of the fields below.</p>";
+	if ( isContinueFormEmpty() ) {
+		getErrorMessage();
 	} else {
-		getIdeaInfo();
+		getContinueFormInfo();
 		header("location:display.php");
 		exit;
 	}
 } elseif (isset ($_POST['addIdea'])) {
-	if (empty($_POST['idea']) || empty($_POST['dwelling']) || empty($_POST['region']) || empty($_POST['price']) ) {
-		echo "<p class='error-message text-center'>Please complete all of the fields below.</p>";
+	if ( isContinueFormEmpty() ) {
+		getErrorMessage();
 	} else {
-		getIdeaInfo();
+		getContinueFormInfo();
 		header("location:continue.php");
 		exit;
 	}
