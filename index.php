@@ -25,7 +25,7 @@
 		</div> <!-- page title -->
 		<div class="row spacer">
 			<div class="col-xs-12">
-				<img src="http://placehold.it/400x350" class="img-responsive center-block" alt="jar">
+				<img src="img/png-green-marbles-jar.png" class="img-responsive center-block" alt="jar">
 			</div>
 		</div> <!-- img -->
 		<div class="row spacer">
