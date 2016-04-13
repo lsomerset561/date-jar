@@ -5,12 +5,15 @@ define("HOSTNAME", "localhost");
 define("MYSQLDB", "capstone");
 
 $link = mysqli_connect(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
+$query1 = "SELECT COUNT(idea) FROM jar;";
+$result_obj = mysqli_query($link, $query1);
+$result = mysqli_fetch_row($result_obj);
+$numOfIdeas = $result[0];
 
-$query = "SELECT COUNT(idea) FROM jar;";
-
-$result = mysqli_query($link, $query);
-$numOfIdeas = mysqli_fetch_row($result);
-echo $numOfIdeas[0];
+$query2 = "SELECT * FROM jar WHERE idea_id = " . rand(1, $numOfIdeas) . ";";
+$result_obj = mysqli_query($link, $query2);
+$result = mysqli_fetch_array($result_obj, MYSQLI_ASSOC);
+$randomIdea = $result['idea'];
 
 if (isset ($_POST['pickAgain'])) {
 	header("location:display.php");
@@ -54,10 +57,12 @@ if (isset ($_POST['pickAgain'])) {
 		
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h4 class="text-center">Your chosen date idea is...</h4>
+				<h3 class="text-center">Your chosen date idea is...</h3>
 			</div>
 			<div class="panel-body">
-				
+				<h4 class="text-center">
+					<?php echo $randomIdea; ?>
+				</h4>
 			</div>
 		</div> <!-- display the random choice -->
 		
