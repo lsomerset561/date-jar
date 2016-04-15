@@ -1,8 +1,5 @@
 <?php include("inc/header.php"); ?>
 
-	&nbsp;
-</div> <!-- end empty col for vertical spacing -->
-
 <div id="start">
 	<div class="col-xs-12 col-md-6">
 		<form action="" method="post">
@@ -112,10 +109,10 @@
 				</div>
 			</div> <!-- details: price -->
 			<div class="row spacer">
-				<button class="col-xs-3 btn btn-default btn-lg" type="submit" name="done">
+				<button class="col-xs-3 btn btn-default btn-lg done-btn" type="submit" name="done">
 					Done
 				</button>
-				<button class="col-xs-4 col-xs-offset-5 col-md-offset-5 btn btn-default btn-lg" type="submit" name="addIdea">
+				<button class="col-xs-4 col-xs-offset-5 col-md-offset-5 btn btn-default btn-lg add-btn" type="submit" name="addIdea">
 					Add Idea
 				</button>
 			</div> <!-- done/add idea btn -->
@@ -136,10 +133,10 @@
 
 		<div class="row spacer">
 			<form action="" method="post">
-				<button class="col-xs-5 btn btn-default btn-lg" type="submit" name="pickAgain">
+				<button class="col-xs-5 btn btn-default btn-lg" id="pick-again" type="submit" name="pickAgain">
 					Pick Again
 				</button>
-				<button class="col-xs-5 col-xs-offset-2 btn btn-default btn-lg" type="submit" name="startOver">
+				<button class="col-xs-5 col-xs-offset-2 btn btn-default btn-lg" id="start-over" type="submit" name="startOver">
 					Start Over
 				</button>
 			</form>
