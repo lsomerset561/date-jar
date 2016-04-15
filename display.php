@@ -34,10 +34,10 @@ include("inc/header.php");
 
 	<div class="row spacer">
 		<form action="" method="post">
-			<button class="col-xs-3 col-xs-offset-1 btn btn-default btn-lg" type="submit" name="pickAgain">
+			<button class="col-xs-5 btn btn-default btn-lg" type="submit" name="pickAgain">
 				Pick Again
 			</button>
-			<button class="col-xs-3 col-xs-offset-4 btn btn-default btn-lg" type="submit" name="startOver">
+			<button class="col-xs-5 col-xs-offset-2 btn btn-default btn-lg" type="submit" name="startOver">
 				Start Over
 			</button>
 		</form>
