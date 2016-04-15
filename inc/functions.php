@@ -1,8 +1,8 @@
 <?php
-define("MYSQLUSER", "lsomerse_resume");
-define("MYSQLPASS", "test1234?!");
+define("MYSQLUSER", "root");
+define("MYSQLPASS", "");
 define("HOSTNAME", "localhost");
-define("MYSQLDB", "lsomerse_capstone");
+define("MYSQLDB", "capstone");
 
 function getErrorMessage() {
 	echo "<p class='error-message text-center'>Please complete ALL of the fields below.</p>";
