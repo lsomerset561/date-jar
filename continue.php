@@ -44,7 +44,7 @@ include("inc/header.php");
 		</div> <!-- idea details header -->
 		<div class="form-horizontal">
 			<div class="form-group">
-				<h4 class="col-xs-1 col-xs-offset-1">1.</h4>
+				<h4 class="col-xs-1">1.</h4>
 				<label class="col-xs-3 col-xs-offset-1 radio-inline">
 					<input type="radio" name="dwelling" value="indoors">indoors
 				</label>
@@ -55,7 +55,7 @@ include("inc/header.php");
 		</div> <!-- details: in/outdoors -->
 		<div class="form-horizontal">
 			<div class="form-group">
-				<h4 class="col-xs-1 col-xs-offset-1">2.</h4>
+				<h4 class="col-xs-1">2.</h4>
 				<label class="col-xs-3 col-xs-offset-1 radio-inline">
 					<input type="radio" name="region" value="in_town">in town
 				</label>
@@ -66,7 +66,7 @@ include("inc/header.php");
 		</div> <!-- details: in/out of town -->
 		<div class="form-horizontal">
 			<div class="form-group">
-				<h4 class="col-xs-1 col-xs-offset-1">3.</h4>
+				<h4 class="col-xs-1">3.</h4>
 				<label class="col-xs-3 col-xs-offset-1 radio-inline">
 					<input type="radio" name="price" value="$">less than &#36;20
 				</label>
