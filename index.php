@@ -1,8 +1,5 @@
 <?php include("inc/header.php"); ?>
 	
-	<h1 class="hidden-xs hidden-sm">&nbsp;</h1>
-</div> <!-- end empty col for vertical spacing -->
-
 <div class="col-xs-12 col-md-7 spacer">
 	<h4 class="text-center spacer">Enter at least two date ideas &amp; I'll randomly choose one for you!</h4>
 	<a href="start.php" id="start-button">

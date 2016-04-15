@@ -22,8 +22,6 @@ if (isset ($_POST['done'])) {
 include("inc/header.php");
 ?>
 
-	&nbsp;
-</div>
 <div class="col-xs-12 col-md-6">
 	<form action="" method="post">
 		<div class="row">

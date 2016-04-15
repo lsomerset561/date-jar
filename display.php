@@ -17,9 +17,6 @@ if (isset ($_POST['pickAgain'])) {
 include("inc/header.php");
 ?>
 
-	<h1>&nbsp;</h1>
-</div> <!-- end empty col for vertical spacing -->
-
 <div class="col-xs-12 col-md-7">		
 	<div class="panel panel-default">
 		<div class="panel-heading">

@@ -2,6 +2,10 @@
 	text-decoration: none;
 }
 
+#panel {
+	display: none;
+}
+
 .spacer {
 	margin: 3% 0;
 }
