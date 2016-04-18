@@ -15,9 +15,9 @@
 	<div class="hidden-sm hidden-md hidden-lg col-xs-12">
 					<h6>&nbsp;</h6>
 	</div> <!-- end third empty col for vertical spacing -->
-	<a href="start.php" id="start-button">
+	<a href="login.php" id="start-button">
 		<button class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-2 col-md-offset-1 btn btn-default btn-lg" type="submit" name="start" value="start">
-			Login or Signup
+			Login
 		</button>
 	</a>
 </div> <!-- end of start btns -->
