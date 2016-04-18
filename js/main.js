@@ -1,6 +1,5 @@
 $header = $('#header');
-$startForm = $('#start');
-$ideas = $(".done-btn").parent().siblings().find("input[type='text']");
+$formArea = $('#form-area');
 $panel = $('#panel');
 var jar = [];
 
@@ -9,35 +8,46 @@ function displayRandomIdea() {
 	$("#display").text(jar[randomIdeaIndex]);
 }
 
+function getIdeaLength() {
+	return $(".btn").parents("form").find("input[type='text']").length;
+}
+
+function getIdeaValue(index) {
+	return $(".btn").parents("form").find("input[type='text']")[index].value;
+}
+
 //on startForm or continueForm: when click 'done' btn
 $(".done-btn").on("click", function(){
 	//obtain input values & store in array
-	if ($ideas.length > 1) {
-		jar.push($ideas[0].value);
-		jar.push($ideas[1].value);
+	if ( getIdeaLength() > 1) {
+		jar.push( getIdeaValue(0) );
+		jar.push( getIdeaValue(1) );
 	} else {
-		jar.push($ideas.value);
+		jar.push( getIdeaValue(0) );
 	}
 	//remove this form
-	$(this).parent().parent().remove();
+	$(this).parents("form").remove();
 	//show panel & display random choice
 	$panel.show();
 	displayRandomIdea();
 	return false;
 });
 
-//on startForm: when click 'add idea' btn
+//on startForm or continueForm: when click 'add idea' btn
 $(".add-btn").on("click", function(){
 	//obtain input values & store in array
-	if ($ideas.length > 1) {
-		jar.push($ideas[0].value);
-		jar.push($ideas[1].value);
+	if ( getIdeaLength() > 1) {
+		jar.push( getIdeaValue(0), getIdeaValue(1) );
 	} else {
-		jar.push($ideas.value);
+		jar.push( getIdeaValue(0) );
 	}
 	//remove this form & insert continueForm after
-	$(this).parent().parent().remove();
-	$header.after(continueForm);
+	$(this).parent().siblings().animate({height: 0}, function() {
+		$(this).empty();
+	});
+	$(this).parent().siblings().animate({height: "100%"}, function() {
+		$(this).html(getContinueForm() );
+	});
 	return false;
 });
 
