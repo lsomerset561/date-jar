@@ -1,13 +1,34 @@
+.navbar-default {
+ 	background-color: #e7c43c;
+ 	border-color: #c0ae2b;
+	background-image: none;
+}
+
+.panel-default, .panel-default > .panel-heading {
+ 	border-color: #c0ae2b;
+	background-image: none;
+}
+
+.btn {
+	background-color: rgba(231, 196, 60, 0.96);
+ 	border-color: #c0ae2b;
+	background-image: none;
+}
+
+.spacer {
+	margin: 3% 0;
+}
+
+.footer {
+	font-style: italic;	
+}
+
 #start-button {
 	text-decoration: none;
 }
 
 #panel {
 	display: none;
-}
-
-.spacer {
-	margin: 3% 0;
 }
 
 img {

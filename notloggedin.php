@@ -1,4 +1,7 @@
-<?php include("inc/header.php"); ?>
+<?php 
+include("inc/header.php"); 
+include("inc/image-display.php");
+?>
 
 <form action="" method="post" class="col-xs-12 col-md-6">
 	<div id="form-area">

@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login | Date Jar</title>
-</head>
+<?php
+include("inc/header.php");
 
-<body>
-	<h1>Login | Date Jar</h1>
-	
-<!-- username & password fields with enter btn with ms5(), then show encryption on next page -->
-
-	<?php
-	if ( !($_SERVER['REQUEST_METHOD'] === 'POST') ) {?>
+if ( !($_SERVER['REQUEST_METHOD'] === 'POST') ) {?>
 	  <form method="post" action="">
-		  <table>
-			<tr>
-			  <th><label for="username">Username:</label></th>
-			  <td><input type="text" id='username' name="username" value="" /></td>
-			</tr>
-			<tr>
-			  <th><label for="password">Password:</label></th>
-			  <td><input type="password" id='password' name="password" value="" /></td>
-			</tr>
-			<tr>
-			  <td>&nbsp;</td>
-			</tr>
-			<tr>
-			  <td><input type="submit" name="enter" value="ENTER" /></td>
-			</tr>
-		  </table>
+	  	<div class="form-horizontal">
+	  		<div class="form-group">
+	  			<label for="username" class="col-xs-3 col-xs-offset-2">Username:</label>
+		  <input type="text" id='username' name="username" value="" />
+	  		</div>
+	  	</div>
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label for="password" class="col-xs-3 col-xs-offset-2">Password:</label>
+			<input type="password" id='password' name="password" value="" />
+			</div>
+			
+		</div>
+		<input type="submit" class="btn btn-lg center-block" name="enter" value="ENTER" />
 		</form>
 	<?php
 	}
@@ -43,7 +32,7 @@
 	  // Make connection to database
 	  $connection = @new mysqli(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
 	  if ($connection->connect_error) {
-		  die("<h3>Your username/password is incorrect.  Please <a href='login.php'>go to the login page</a> & enter your credentials.</h3>");
+		  die("<h3>Your username/password is incorrect.</h3><h3>Please <a href='login.php'>go to the login page</a> & enter your credentials.</h3>");
 	  } else {
 		  session_start();
 		  $_SESSION['username'] = $username;

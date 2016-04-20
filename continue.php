@@ -33,6 +33,7 @@ if (isset ($_POST['done'])) {
 }
 
 include("inc/header.php");
+include("inc/image-display.php");
 ?>
 
 <div class="col-xs-12 col-md-6">

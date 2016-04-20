@@ -28,6 +28,7 @@ if (isset ($_POST['pickAgain'])) {
 }
 
 include("inc/header.php");
+include("inc/image-display.php");
 ?>
 
 <div class="col-xs-12 col-md-7">		

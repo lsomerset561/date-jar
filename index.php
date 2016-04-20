@@ -1,4 +1,6 @@
-<?php include("inc/header.php"); ?>
+<?php include("inc/header.php"); 
+include("inc/image-display.php");
+?>
 	
 <div class="col-xs-12 col-md-7">
 	<h3 class="text-center">Enter at least two date ideas &amp; I'll randomly choose one for you!</h3>
