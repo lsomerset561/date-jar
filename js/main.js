@@ -15,27 +15,37 @@ function getIdeaValues() {
 
 //on startForm or continueForm: when click 'done' btn
 $(".done-btn").on("click", function(){
-	//obtain input values & store in array
-	getIdeaValues();
-	//remove this form
-	$(this).parents("form").remove();
-	//show panel & display random choice
-	$('#panel').show();
-	displayRandomIdea();
+	//inform user if fields are empty
+	if ($(".btn").parents("form").find("input[type='text']").val() === "") {
+		alert("Please fill in the textboxes!");
+	} else {
+		//obtain input values & store in array
+		getIdeaValues();
+		//remove this form
+		$(this).parents("form").remove();
+		//show panel & display random choice
+		$('#panel').show();
+		displayRandomIdea();
+	}
 	return false;
 });
 
 //on startForm or continueForm: when click 'add idea' btn
 $(".add-btn").on("click", function(){
-	//obtain input values & store in array
-	getIdeaValues();
-	//remove this form & insert continueForm after
-	$(this).parent().siblings().animate({height: 0}, function() {
-		$(this).empty();
-	});
-	$(this).parent().siblings().animate({height: "100%"}, function() {
-		$(this).html(getContinueForm() );
-	});
+	//inform user if fields are empty
+	if ($(".btn").parents("form").find("input[type='text']").val() === "") {
+		alert("Please fill in the textboxes!");
+	} else {
+		//obtain input values & store in array
+		getIdeaValues();
+		//remove this form & insert continueForm after
+		$(this).parent().siblings().animate({height: 0}, function() {
+			$(this).empty();
+		});
+		$(this).parent().siblings().animate({height: "100%"}, function() {
+			$(this).html(getContinueForm() );
+		});
+	}
 	return false;
 });
 

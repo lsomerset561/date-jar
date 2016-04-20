@@ -1,4 +1,5 @@
 <?php
+include("inc/header.php");
 session_start();
 function isLoggedIn() {
 	if ( isset($_SESSION['username']) && isset($_SESSION['password'])) {
@@ -9,7 +10,7 @@ function isLoggedIn() {
 }
 
 if ( !isLoggedIn() ) {
-	echo "<h1>Date Jar</h1><h3>Sorry, this page is restricted.  Please <a href='login.php'>go to the login page</a> & enter your credentials.</h3>";
+	echo "<h3>Sorry, this page is restricted.</h3><h3>Please <a href='login.php'>go to the login page</a> & enter your credentials.</h3>";
 } else {
 	
 include("inc/functions.php");
@@ -27,7 +28,6 @@ if (isset ($_POST['pickAgain'])) {
 	exit;
 }
 
-include("inc/header.php");
 include("inc/image-display.php");
 ?>
 

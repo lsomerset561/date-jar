@@ -16,7 +16,9 @@
 
 <body>
 	<div class="navbar navbar-default">
-		<h1 class="text-uppercase text-center">Date Jar</h1>
+		<a href="index.php">
+			<h1 class="text-uppercase text-center">Date Jar</h1>
+		</a>
 	</div>
 	<div class="container-fluid">
 		<div class="row spacer">

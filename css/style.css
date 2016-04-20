@@ -4,14 +4,22 @@
 	background-image: none;
 }
 
+.navbar-default a {
+	color: #000;
+}
+
+.navbar-default a:hover {
+	text-decoration: none;
+	color: #f0f8ff;
+}
+
 .panel-default, .panel-default > .panel-heading {
  	border-color: #c0ae2b;
 	background-image: none;
 }
 
 .btn {
-	background-color: rgba(231, 196, 60, 0.96);
- 	border-color: #c0ae2b;
+	background-color: #e7c43c;
 	background-image: none;
 }
 
