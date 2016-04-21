@@ -1,16 +1,15 @@
 .navbar-default {
- 	background-color: #e7c43c;
- 	border-color: #c0ae2b;
+ 	background-color: #314d73;
 	background-image: none;
 }
 
 .navbar-default a {
-	color: #000;
+	color: #f0f8ff;
 }
 
 .navbar-default a:hover {
 	text-decoration: none;
-	color: #f0f8ff;
+	color: #f4a460;
 }
 
 .panel-default, .panel-default > .panel-heading {
@@ -19,8 +18,17 @@
 }
 
 .btn {
-	background-color: #e7c43c;
+	background-color: #314d73;
 	background-image: none;
+	color: #f0f8ff;
+	text-shadow: none;
+}
+
+.btn-default:focus {
+	background-color: #314d73;
+	background-image: none;
+	color: #f0f8ff;
+	text-shadow: none;
 }
 
 .spacer {
@@ -31,7 +39,7 @@
 	font-style: italic;	
 }
 
-#start-button {
+.start-button {
 	text-decoration: none;
 }
 
@@ -45,7 +53,8 @@ img {
 }
 
 .error-message {
-	background: #ffeca4;
-    border: 2px solid #f16702;
+	background: #e7c43c;
+    border: 2px solid #e7c43c;
+	color: #000;
 	width: auto;
 }

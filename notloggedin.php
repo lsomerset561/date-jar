@@ -2,7 +2,9 @@
 include("inc/header.php"); 
 include("inc/image-display.php");
 ?>
-
+<div id="show-error" class="col-xs-12 col-md-6">
+	
+</div>
 <form action="" method="post" class="col-xs-12 col-md-6">
 	<div id="form-area">
 		<div class="row">

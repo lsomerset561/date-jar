@@ -1,4 +1,5 @@
 var jar = [];
+$showError = $('#show-error');
 
 function displayRandomIdea() {
 	var randomIdeaIndex = Math.floor( Math.random() * jar.length);
@@ -17,7 +18,7 @@ function getIdeaValues() {
 $(".done-btn").on("click", function(){
 	//inform user if fields are empty
 	if ($(".btn").parents("form").find("input[type='text']").val() === "") {
-		alert("Please fill in the textboxes!");
+		$showError.html("<h3 class='error-message text-center'>Please fill in the textboxes!</h3>");
 	} else {
 		//obtain input values & store in array
 		getIdeaValues();
@@ -34,7 +35,7 @@ $(".done-btn").on("click", function(){
 $(".add-btn").on("click", function(){
 	//inform user if fields are empty
 	if ($(".btn").parents("form").find("input[type='text']").val() === "") {
-		alert("Please fill in the textboxes!");
+		$showError.html("<h3 class='error-message text-center'>Please fill in the textboxes!</h3>");
 	} else {
 		//obtain input values & store in array
 		getIdeaValues();
